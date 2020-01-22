@@ -5,3 +5,39 @@
 .ivysaur{
 	background-image: url(/assets/icons/2.png);
 }
+
+.venosaur{
+	background-image: url(/assets/icons/3.png);
+}
+
+.charmander{
+	background-image: url(/assets/icons/4.png);
+}
+
+.charmeleon{
+	background-image: url(/assets/icons/5.png);
+}
+
+.charizard{
+	background-image: url(/assets/icons/6.png);
+}
+
+.charizard[form="mega-x"]{
+	background-image: url(/assets/icons/6-mega-x.png);
+}
+
+.charizard[form="mega-y"]{
+	background-image: url(/assets/icons/6-mega-y.png);
+}
+
+.squirtle{
+	background-image: url(/assets/icons/7.png);
+}
+
+.wartortle{
+	background-image: url(/assets/icons/8.png);
+}
+
+.blastoise{
+	background-image: url(/assets/icons/9.png);
+}
