@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pokemon-teambuilder';
+  title = 'Pokémon TeamBuilder v0.1';
 }

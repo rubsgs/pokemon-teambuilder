@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListaPokemonComponent } from './lista-pokemon/lista-pokemon.component';
+import { SelecaoTimeComponent } from './selecao-time/selecao-time.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListaPokemonComponent,
+    SelecaoTimeComponent
   ],
   imports: [
     BrowserModule,
