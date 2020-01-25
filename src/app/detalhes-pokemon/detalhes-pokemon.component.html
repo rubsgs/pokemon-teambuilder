@@ -1,0 +1,8 @@
+<div class="detalhes-pokemon" *ngIf="this.pokemon != null">
+	<div [class]="'icon img-detalhes-pokemon ' + pokemon.className" [attr.form]="formaEscolhida"></div>
+	<div class="info-pokemon">
+		<h4>Name:</h4>
+		{{pokemon.name}}
+
+	</div>
+</div>

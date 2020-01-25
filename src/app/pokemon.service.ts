@@ -7,10 +7,18 @@ import { pokemonSrc } from './pokemon-mock';
 	providedIn: 'root'
 })
 export class PokemonService {
-
-	constructor() { }
+	pokemonEscolhido:Pokemon;
+	formaEscolhida: string;
+	constructor() { 
+		this.pokemonEscolhido = null;
+		this.formaEscolhida = null;
+	}
 
 	getPokemons():Observable<Pokemon[]> {
 		return of(pokemonSrc);
+	}
+
+	limpaPokemonEscolhido(){
+		this.pokemonEscolhido = null;
 	}
 }

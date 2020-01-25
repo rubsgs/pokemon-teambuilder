@@ -1,0 +1,12 @@
+.barra-lateral{
+	background-color: #FFF;
+	transition-property: width;
+	transition-duration: 0.5s;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	box-shadow: -10px 0px 10px 0px #000;
+	overflow-x: hidden;
+	overflow-y: auto;
+}

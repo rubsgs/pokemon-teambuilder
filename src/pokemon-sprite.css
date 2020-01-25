@@ -10,6 +10,10 @@
 	background-image: url(/assets/icons/3.png);
 }
 
+.venosaur[form="mega"]{
+	background-image: url(/assets/icons/3-mega.png);
+}
+
 .charmander{
 	background-image: url(/assets/icons/4.png);
 }
@@ -40,4 +44,8 @@
 
 .blastoise{
 	background-image: url(/assets/icons/9.png);
+}
+
+.blastoise[form="mega"]{
+	background-image: url(/assets/icons/9-mega.png);
 }

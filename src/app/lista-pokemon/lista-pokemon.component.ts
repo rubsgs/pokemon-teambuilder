@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
 
@@ -9,6 +9,7 @@ import { PokemonService } from '../pokemon.service';
 })
 export class ListaPokemonComponent implements OnInit {
 	pokemons: Pokemon[];
+	@Output() pokemonFoiEscolhido = new EventEmitter();
 	
 	constructor(
 		private pokemonService: PokemonService
@@ -20,5 +21,12 @@ export class ListaPokemonComponent implements OnInit {
 
 	getPokemons(): void{
 		this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
+	}
+
+	escolhePokemon(evento: any,pokemon: Pokemon, form: string){
+		this.pokemonService.pokemonEscolhido = pokemon;
+		this.pokemonService.formaEscolhida = form;
+		evento.stopPropagation();
+		this.pokemonFoiEscolhido.emit();
 	}
 }

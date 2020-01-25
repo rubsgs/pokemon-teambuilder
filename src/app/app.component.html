@@ -1,5 +1,6 @@
 <div class="container-app">
   <h1>{{title}}</h1>
-  <app-selecao-time></app-selecao-time>
-  <app-lista-pokemon></app-lista-pokemon>
+  <app-selecao-time (click)="pokemonService.limpaPokemonEscolhido()"></app-selecao-time>
+  <app-lista-pokemon (click)="pokemonService.limpaPokemonEscolhido()"></app-lista-pokemon>
+  <app-barra-lateral [pokemon]="pokemonService.pokemonEscolhido" [formaEscolhida]="pokemonService.formaEscolhida"></app-barra-lateral>
 </div>
