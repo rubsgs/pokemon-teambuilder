@@ -1,3 +1,5 @@
 <div class="barra-lateral" [ngStyle]="{'width.%': tamanhoAbertura}">
-	<app-detalhes-pokemon [pokemon]="pokemonService.pokemonEscolhido" [formaEscolhida]="pokemonService.formaEscolhida"></app-detalhes-pokemon>
+	<app-detalhes-pokemon [pokemon]="pokemonService.pokemonEscolhido"></app-detalhes-pokemon>
+	
+	<button (click)="incluir(pokemonService.pokemonEscolhido, ordem)">Incluir no time</button>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 import { Pokemon } from '../pokemon';
+import { PokemonModel } from '../pokemon-model';
 import { PokemonService } from '../pokemon.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { PokemonService } from '../pokemon.service';
 	styleUrls: ['./lista-pokemon.component.css']
 })
 export class ListaPokemonComponent implements OnInit {
-	pokemons: Pokemon[];
+	pokemons: PokemonModel[];
 	@Output() pokemonFoiEscolhido = new EventEmitter();
 	
 	constructor(
@@ -25,7 +26,7 @@ export class ListaPokemonComponent implements OnInit {
 
 	escolhePokemon(evento: any,pokemon: Pokemon, form: string){
 		this.pokemonService.pokemonEscolhido = pokemon;
-		this.pokemonService.formaEscolhida = form;
+		this.pokemonService.pokemonEscolhido.form = form;
 		evento.stopPropagation();
 		this.pokemonFoiEscolhido.emit();
 	}

@@ -1,7 +1,7 @@
 .barra-lateral{
 	background-color: #FFF;
 	transition-property: width;
-	transition-duration: 0.5s;
+	transition-duration: 0.3s;
 	height: 100%;
 	position: fixed;
 	top: 0px;

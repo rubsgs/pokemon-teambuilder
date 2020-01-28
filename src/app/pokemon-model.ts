@@ -1,10 +1,9 @@
-import { PokemonModel } from './pokemon-model';
 import { MoveModel } from './move-model';
-export class Pokemon extends PokemonModel {
+export class PokemonModel {
 	number: number;
 	name: string;
 	className: string;
-	form: string;
+	forms: string[] | string;
 	moveSet: MoveModel[];
 	stats: {
 		hp: number,

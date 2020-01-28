@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
 
@@ -11,6 +11,7 @@ export class BarraLateralComponent implements OnInit {
 
 	@Input() pokemon: Pokemon;
 	@Input() formaEscolhida: string;
+	@Output() pokemonIncluido = new EventEmitter();
 	tamanhoAbertura: number;
 	
 	constructor(private pokemonService: PokemonService) { }
@@ -36,4 +37,7 @@ export class BarraLateralComponent implements OnInit {
 		}, timeout);
 	}
 
+	incluir(pokemon: Pokemon, posicao: number){
+
+	}
 }
