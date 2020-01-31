@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Pokemon } from '../pokemon';
+import { Component, OnInit, Input } from '@angular/core';
+import { AppRoutingModule } from '../app-routing.module';
+import { PokemonModel } from '../pokemon-model';
 import { PokemonService } from '../pokemon.service';
 
 @Component({
@@ -9,9 +10,7 @@ import { PokemonService } from '../pokemon.service';
 })
 export class BarraLateralComponent implements OnInit {
 
-	@Input() pokemon: Pokemon;
-	@Input() formaEscolhida: string;
-	@Output() pokemonIncluido = new EventEmitter();
+	@Input() pokemon: PokemonModel;
 	tamanhoAbertura: number;
 	
 	constructor(private pokemonService: PokemonService) { }
@@ -22,7 +21,7 @@ export class BarraLateralComponent implements OnInit {
 
 	ngOnChanges(){
 		//Se a barra já estiver fechada, o tempo para abertura é de 1 milisegundo, senão é de 500;
-		var timeout = 500;
+		var timeout = 300;
 		
 		if(this.tamanhoAbertura == 0){
 			timeout = 1;
@@ -30,14 +29,9 @@ export class BarraLateralComponent implements OnInit {
 
 		this.tamanhoAbertura = 0;
 		setTimeout(() => {
-			console.log(this);
 			if(this.pokemon != null){
 				this.tamanhoAbertura = 20;
 			}
 		}, timeout);
-	}
-
-	incluir(pokemon: Pokemon, posicao: number){
-
 	}
 }

@@ -1,3 +1,4 @@
+import { Nature } from './nature';
 import { PokemonModel } from './pokemon-model';
 import { MoveModel } from './move-model';
 export class Pokemon extends PokemonModel {
@@ -5,7 +6,10 @@ export class Pokemon extends PokemonModel {
 	name: string;
 	className: string;
 	form: string;
+	forms: number[];
 	moveSet: MoveModel[];
+	ability: string;
+	nature: Nature;
 	stats: {
 		hp: number,
 		attack: number,

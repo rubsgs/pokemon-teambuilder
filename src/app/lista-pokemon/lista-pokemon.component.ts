@@ -21,12 +21,12 @@ export class ListaPokemonComponent implements OnInit {
 	}
 
 	getPokemons(): void{
-		this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
+		this.pokemonService.getPokemons().subscribe(pokemons => {this.pokemons = <PokemonModel[]>pokemons;console.log(pokemons)});
 	}
 
-	escolhePokemon(evento: any,pokemon: Pokemon, form: string){
-		this.pokemonService.pokemonEscolhido = pokemon;
-		this.pokemonService.pokemonEscolhido.form = form;
+	escolhePokemon(evento: any,pokemon: PokemonModel){
+		this.pokemonService.pokemonEscolhido = <PokemonModel>pokemon;
+		this.pokemonService.pokemonEscolhido.form = pokemon.form;
 		evento.stopPropagation();
 		this.pokemonFoiEscolhido.emit();
 	}

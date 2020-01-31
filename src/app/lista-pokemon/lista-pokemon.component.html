@@ -1,6 +1,5 @@
 <div class="container-lista-pokemon" (click)="escolhePokemon($event,null, null)">
 	<ng-container *ngFor="let pokemon of pokemons">
-		<div [class]="pokemon.className + ' icon item-lista'" (click)="escolhePokemon($event,pokemon, null)"></div>
-		<div *ngFor="let form of pokemon.forms" [class]="'icon item-lista ' + pokemon.className" [attr.form]="form" (click)="escolhePokemon($event,pokemon, form)"></div>
+		<div [class]="pokemon.className + ' icon item-lista'" (click)="escolhePokemon($event,pokemon, null)" [attr.form]="pokemon.form"></div>
 	</ng-container>
 </div>

@@ -1,10 +1,28 @@
 .detalhes-pokemon{
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-.icon.img-detalhes-pokemon{
-	width: 200px;
-	height: 150px;	
+.detalhes-pokemon > div{
+	flex-grow: 1;
+}
+
+.icon{
+	width: 400px;
+	height: 300px;
+	float: right;
+	background-size: 100% 100%;
+}
+
+.customizar-ev,
+.customizar-iv{
+	padding: 1%;
+	display: inline-block;
+}
+
+.grupo-customizacao input{
+	display: block;
+	width: 100%;
+	border-radius: 5px;
 }

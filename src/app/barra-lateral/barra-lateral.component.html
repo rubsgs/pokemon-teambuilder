@@ -1,5 +1,18 @@
 <div class="barra-lateral" [ngStyle]="{'width.%': tamanhoAbertura}">
-	<app-detalhes-pokemon [pokemon]="pokemonService.pokemonEscolhido"></app-detalhes-pokemon>
+	<div class="resumo-pokemon" *ngIf="this.pokemon != null">
+		<div [class]="'icon img-resumo-pokemon ' + pokemon.className" [attr.form]="pokemon.form"></div>
+		<div class="info-pokemon">
+			<div><label>Name:</label> {{pokemon.name}}</div>
+			<div><label>HP:</label> {{pokemon.stats.hp}}
+			<div><label>Attack</label> {{pokemon.stats.attack}}</div>
+			<div><label>Defense</label> {{pokemon.stats.defense}}</div>
+			<div><label>Special Attack</label> {{pokemon.stats.spAttack}}</div>
+			<div><label>Special Defense</label> {{pokemon.stats.spDefense}}</div>
+			<div><label>Speed</label> {{pokemon.stats.speed}}</div>
+		</div>
+	</div>
 	
-	<button (click)="incluir(pokemonService.pokemonEscolhido, ordem)">Incluir no time</button>
+	<div class="container-acoes">
+		<button id="incluir-pokemon" [routerLink]="['/pokemon/details', pokemon.id]">Ver Detalhes</button>
+	</div>
 </div>

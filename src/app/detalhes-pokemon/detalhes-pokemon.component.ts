@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Pokemon } from '../pokemon';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PokemonService } from '../pokemon.service';
+import { PokemonModel } from '../pokemon-model';
 
 @Component({
 	selector: 'app-detalhes-pokemon',
@@ -7,10 +9,19 @@ import { Pokemon } from '../pokemon';
 	styleUrls: ['./detalhes-pokemon.component.css']
 })
 export class DetalhesPokemonComponent implements OnInit {
-	@Input() pokemon: Pokemon;
-	@Input() formaEscolhida: string;
-	constructor() {}
+	pokemon: PokemonModel;
+	formaEscolhida: string;
+	constructor(private pokemonService: PokemonService, private route: ActivatedRoute) {
+		this.pokemon = null;
+	}
 
 	ngOnInit() {
+		this.route.paramMap.subscribe(params=>{
+			this.pokemonService.getPokemon(+params.get("id")).subscribe(pokemon => {
+				this.pokemon = pokemon;
+				console.log(this.pokemon);
+			});
+		});
+		console.log("fim nginit");
 	}
 }

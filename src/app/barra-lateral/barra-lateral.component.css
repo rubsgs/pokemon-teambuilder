@@ -10,3 +10,29 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 }
+
+.resumo-pokemon{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.icon.img-resumo-pokemon{
+	width: 200px;
+	height: 150px;
+	margin-bottom: 1%;
+}
+
+label{
+	font-weight: bold;
+}
+
+.container-acoes{
+	text-align: center;
+}
+
+#incluir-pokemon{
+	border-radius: 5px;
+	
+	padding: 5px;
+}

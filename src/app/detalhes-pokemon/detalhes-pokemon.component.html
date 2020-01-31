@@ -1,8 +1,66 @@
-<div class="detalhes-pokemon" *ngIf="this.pokemon != null">
-	<div [class]="'icon img-detalhes-pokemon ' + pokemon.className" [attr.form]="pokemon.form"></div>
-	<div class="info-pokemon">
-		<h4>Name:</h4>
-		{{pokemon.name}}
-
+<div class="detalhes-pokemon" *ngIf="pokemon != null" (click)="pokemonService.limpaPokemonEscolhido()">
+	<div class="container-icon">
+		<div [class]="pokemon.className + ' icon'" [attr.form]="pokemon.form"></div>
+	</div>
+	<div class="container-stats">
+		<h2>{{pokemon.name}}</h2>
+		<div class="customizar-ev">
+			<form>
+				<div class="grupo-customizacao">
+					<label for="hp">HP</label>
+					<input type="text" class="input-ev" name="hp">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="attack">Attack</label>
+					<input type="text" class="input-ev" name="attack">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="defense">Defense</label>
+					<input type="text" class="input-ev" name="defense">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="sp-attack">Sp. Attack</label>
+					<input type="text" class="input-ev" name="sp-attack">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="sp-defense">Sp. Defense</label>
+					<input type="text" class="input-ev" name="sp-defense">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="speed">Speed</label>
+					<input type="text" class="input-ev" name="speed">
+				</div>
+			</form>
+		</div>
+		<div class="customizar-iv">
+			<form>
+				<div class="grupo-customizacao">
+					<label for="hp">HP</label>
+					<input type="text" class="input-iv" name="hp">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="attack">Attack</label>
+					<input type="text" class="input-iv" name="attack">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="defense">Defense</label>
+					<input type="text" class="input-iv" name="defense">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="sp-attack">Sp. Attack</label>
+					<input type="text" class="input-iv" name="sp-attack">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="sp-defense">Sp. Defense</label>
+					<input type="text" class="input-iv" name="sp-defense">
+				</div>
+				<div class="grupo-customizacao">
+					<label for="speed">Speed</label>
+					<input type="text" class="input-iv" name="speed">
+				</div>
+			</form>
+		</div>
+		<div class="display-stats"></div>
+		<div class="display-stats"></div>
 	</div>
 </div>
