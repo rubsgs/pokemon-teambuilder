@@ -1,0 +1,29 @@
+<div [class]="classeContainer + ' container'">
+	<form [formGroup]="formStats">
+		<h4>{{titulo}}</h4>
+		<div class="grupo-customizacao">
+			<label for="hp">HP</label>
+			<input type="text" [class]="classeInput" formControlName="hp" [attr.disabled]="disabled">
+		</div>
+		<div class="grupo-customizacao">
+			<label for="attack">Attack</label>
+			<input type="text" [class]="classeInput" formControlName="attack" [attr.disabled]="disabled">
+		</div>
+		<div class="grupo-customizacao">
+			<label for="defense">Defense</label>
+			<input type="text" [class]="classeInput" formControlName="defense" [attr.disabled]="disabled">
+		</div>
+		<div class="grupo-customizacao">
+			<label for="spAttack">Sp. Attack</label>
+			<input type="text" [class]="classeInput" formControlName="spAttack" [attr.disabled]="disabled">
+		</div>
+		<div class="grupo-customizacao">
+			<label for="spDefense">Sp. Defense</label>
+			<input type="text" [class]="classeInput" formControlName="spDefense" [attr.disabled]="disabled">
+		</div>
+		<div class="grupo-customizacao">
+			<label for="speed">Speed</label>
+			<input type="text" [class]="classeInput" formControlName="speed" [attr.disabled]="disabled">
+		</div>
+	</form>
+</div>

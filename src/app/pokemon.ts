@@ -1,6 +1,8 @@
 import { Nature } from './nature';
 import { PokemonModel } from './pokemon-model';
 import { MoveModel } from './move-model';
+import { StatsModel } from './stats-model';
+
 export class Pokemon extends PokemonModel {
 	number: number;
 	name: string;
@@ -10,28 +12,7 @@ export class Pokemon extends PokemonModel {
 	moveSet: MoveModel[];
 	ability: string;
 	nature: Nature;
-	stats: {
-		hp: number,
-		attack: number,
-		spAttack: number,
-		defense: number,
-		spDefense: number,
-		speed: number
-	};
-	iv: {
-		hp: number,
-		attack: number,
-		spAttack: number,
-		defense: number,
-		spDefense: number,
-		speed: number
-	};
-	ev: {
-		hp: number,
-		attack: number,
-		spAttack: number,
-		defense: number,
-		spDefense: number,
-		speed: number
-	}
+	stats: StatsModel;
+	iv: StatsModel;
+	ev: StatsModel;
 }

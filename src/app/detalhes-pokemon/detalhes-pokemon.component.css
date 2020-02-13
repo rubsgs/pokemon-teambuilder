@@ -8,6 +8,16 @@
 	flex-grow: 1;
 }
 
+.container-stats{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.nome-pokemon{
+	flex-basis: 100%;
+}
+
 .icon{
 	width: 400px;
 	height: 300px;
@@ -15,14 +25,7 @@
 	background-size: 100% 100%;
 }
 
-.customizar-ev,
-.customizar-iv{
-	padding: 1%;
-	display: inline-block;
+.container-icon{
+	align-self: center;
 }
 
-.grupo-customizacao input{
-	display: block;
-	width: 100%;
-	border-radius: 5px;
-}
