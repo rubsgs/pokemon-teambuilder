@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppRoutingModule } from '../app-routing.module';
 import { PokemonModel } from '../pokemon-model';
-import { PokemonService } from '../pokemon.service';
 
 @Component({
 	selector: 'app-barra-lateral',
@@ -13,7 +12,7 @@ export class BarraLateralComponent implements OnInit {
 	@Input() pokemon: PokemonModel;
 	tamanhoAbertura: number;
 	
-	constructor(private pokemonService: PokemonService) { }
+	constructor() { }
 
 	ngOnInit() {
 		this.tamanhoAbertura = 0;

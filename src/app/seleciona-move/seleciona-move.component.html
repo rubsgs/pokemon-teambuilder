@@ -1,0 +1,21 @@
+<div class="modal">
+	<div class="modal-title">
+		<h2>Move Selection</h2>
+	</div>
+	<div class="container-moves">
+		<div class="moves-disponiveis">
+			<app-move-item *ngFor="let move of pokemon.availableMoves" [readOnly]="false" [move]="move" [adicionarPush]="pokemon.moveSet.length < 4 ? true : false" (moveSelecionado)="adicionarMove($event)"></app-move-item>
+		</div>
+		<div class="moves-escolhidos">
+			<app-move-item *ngFor="let move of pokemon.moveSet" [readOnly]="true" [move]="move" [adicionarPush]="pokemon.moveSet.length < 4 ? true : false" (moveSelecionado)="adicionarMove($event)"></app-move-item>
+		</div>
+	</div>
+	<div class="modal-opcoes">
+		<button class="btn-fechar btn-lg" (click)="fechar.emit()">
+			Close
+		</button>
+		<button class="btn-adicionar-time btn-lg" (click)="adicionar.emit()" [disabled]="pokemon.moveSet.length == 0 ? 'disabled' : ''">
+			Add Pokemon
+		</button>
+	</div>
+</div>

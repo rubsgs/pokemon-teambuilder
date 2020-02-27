@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { PokemonModel } from '../pokemon-model';
 import { PokemonService } from '../pokemon.service';

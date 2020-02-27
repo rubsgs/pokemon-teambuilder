@@ -9,6 +9,7 @@ export class Pokemon extends PokemonModel {
 	className: string;
 	form: string;
 	forms: number[];
+	availableMoves: MoveModel[];
 	moveSet: MoveModel[];
 	ability: string;
 	nature: Nature;

@@ -3,13 +3,83 @@ import { PokemonModel } from './pokemon-model';
 
 export class pokemonSrc implements InMemoryDbService{
 	createDb(){
-		const pokemons = [
+		const pokemons: PokemonModel[] = [
 			{
 				"id": 1,
-				"number": "1",
+				"number": 1,
 				"name": "Bulbasaur",
 				"className": "bulbasaur",
 				"form": null,
+				"forms": null,
+				"abilities": [],
+				"availableMoves": [
+					{
+						"name": "Tackle",
+						"type": "normal",
+						"category": "physical",
+						"power": 40,
+						"accuracy": 100,
+						"pp": 35,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growl",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 40,
+						"effect": "Decreases opponent's attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Vine Whipe",
+						"type": "grass",
+						"category": "physical",
+						"power": 45,
+						"accuracy": 100,
+						"pp": 25,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growth",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 20,
+						"effect": "Increase user's attack and special attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Leech Seed",
+						"type": "grass",
+						"category": "status",
+						"power": 0,
+						"accuracy": 90,
+						"pp": 10,
+						"effect": "Steal target's HP every tun",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Magical Leaf",
+						"type": "grass",
+						"category": "special",
+						"power": 60,
+						"accuracy": null,
+						"pp": 20,
+						"effect": "Always hits",
+						"tm": "TM10",
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					}
+				],
 				"stats": {
 					"hp": 45,
 					"attack": 49,
@@ -21,10 +91,80 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 2,
-				"number": "2",
+				"number": 2,
 				"name": "Ivysaur",
 				"className": "ivysaur",
 				"form": null,
+				"forms": null,
+				"abilities": [],
+				"availableMoves": [
+					{
+						"name": "Tackle",
+						"type": "normal",
+						"category": "physical",
+						"power": 40,
+						"accuracy": 100,
+						"pp": 35,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growl",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 40,
+						"effect": "Decreases opponent's attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Vine Whipe",
+						"type": "grass",
+						"category": "physical",
+						"power": 45,
+						"accuracy": 100,
+						"pp": 25,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growth",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 20,
+						"effect": "Increase user's attack and special attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Leech Seed",
+						"type": "grass",
+						"category": "status",
+						"power": 0,
+						"accuracy": 90,
+						"pp": 10,
+						"effect": "Steal target's HP every tun",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Magical Leaf",
+						"type": "grass",
+						"category": "special",
+						"power": 60,
+						"accuracy": null,
+						"pp": 20,
+						"effect": "Always hits",
+						"tm": "TM10",
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					}
+				],
 				"stats": {
 					"hp": 60,
 					"attack": 62,
@@ -36,11 +176,80 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 3,
-				"number": "3",
+				"number": 3,
 				"name": "Venosaur",
 				"className": "venosaur",
 				"form": null,
 				"forms": [4],
+				"abilities": [],
+				"availableMoves": [
+					{
+						"name": "Tackle",
+						"type": "normal",
+						"category": "physical",
+						"power": 40,
+						"accuracy": 100,
+						"pp": 35,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growl",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 40,
+						"effect": "Decreases opponent's attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Vine Whipe",
+						"type": "grass",
+						"category": "physical",
+						"power": 45,
+						"accuracy": 100,
+						"pp": 25,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growth",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 20,
+						"effect": "Increase user's attack and special attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Leech Seed",
+						"type": "grass",
+						"category": "status",
+						"power": 0,
+						"accuracy": 90,
+						"pp": 10,
+						"effect": "Steal target's HP every tun",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Magical Leaf",
+						"type": "grass",
+						"category": "special",
+						"power": 60,
+						"accuracy": null,
+						"pp": 20,
+						"effect": "Always hits",
+						"tm": "TM10",
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					}
+				],
 				"stats": {
 					"hp": 80,
 					"attack": 82,
@@ -52,11 +261,80 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 4,
-				"number": "3",
+				"number": 3,
 				"name": "Mega Venosaur",
 				"className": "venosaur",
 				"form": "mega",
 				"forms": null,
+				"abilities": [],
+				"availableMoves": [
+					{
+						"name": "Tackle",
+						"type": "normal",
+						"category": "physical",
+						"power": 40,
+						"accuracy": 100,
+						"pp": 35,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growl",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 40,
+						"effect": "Decreases opponent's attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Vine Whipe",
+						"type": "grass",
+						"category": "physical",
+						"power": 45,
+						"accuracy": 100,
+						"pp": 25,
+						"effect": null,
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Growth",
+						"type": "normal",
+						"category": "status",
+						"power": 0,
+						"accuracy": 100,
+						"pp": 20,
+						"effect": "Increase user's attack and special attack",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Leech Seed",
+						"type": "grass",
+						"category": "status",
+						"power": 0,
+						"accuracy": 90,
+						"pp": 10,
+						"effect": "Steal target's HP every tun",
+						"tm": null,
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					},
+					{
+						"name": "Magical Leaf",
+						"type": "grass",
+						"category": "special",
+						"power": 60,
+						"accuracy": null,
+						"pp": 20,
+						"effect": "Always hits",
+						"tm": "TM10",
+						"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus neque vitae mauris volutpat porttitor. Suspendisse finibus neque a eros lacinia hendrerit. Maecenas tincidunt vel justo nec blandit. Integer arcu nisi, feugiat sit amet mollis ut, efficitur eu leo. Maecenas dui turpis, tincidunt ut posuere non, ultrices a lacus."
+					}
+				],
 				"stats": {
 					"hp": 80,
 					"attack": 100,
@@ -68,11 +346,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 5,
-				"number": "4",
+				"number": 4,
 				"name": "Charmander",
 				"className": "charmander",
 				"form": null,
 				"forms": null,
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 39,
 					"attack": 52,
@@ -84,11 +364,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 6,
-				"number": "5",
+				"number": 5,
 				"name": "Charmeleon",
 				"className": "charmeleon",
 				"form": null,
 				"forms": null,
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 58,
 					"attack": 64,
@@ -100,11 +382,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 7,
-				"number": "6",
+				"number": 6,
 				"name": "Charizard",
 				"className": "charizard",
 				"form": null,
 				"forms":[8,9],
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 78,
 					"attack": 84,
@@ -116,11 +400,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 8,
-				"number": "6",
+				"number": 6,
 				"name": "Mega Charizard X",
 				"className": "charizard",
 				"form": "mega-x",
 				"forms": null,
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 78,
 					"attack": 130,
@@ -132,11 +418,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 9,
-				"number": "6",
+				"number": 6,
 				"name": "Mega Charizard Y",
 				"className": "charizard",
 				"form": "mega-y",
 				"forms": null,
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 78,
 					"attack": 104,
@@ -148,11 +436,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 10,
-				"number": "7",
+				"number": 7,
 				"name": "Squirtle",
 				"className": "squirtle",
 				"form": null,
 				"forms": null,
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 44,
 					"attack": 48,
@@ -164,11 +454,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 11,
-				"number": "8",
+				"number": 8,
 				"name": "Wartortle",
 				"className": "wartortle",
 				"form": null,
 				"forms": null,
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 59,
 					"attack": 63,
@@ -180,11 +472,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 12,
-				"number": "9",
+				"number": 9,
 				"name": "Blastoise",
 				"className": "blastoise",
 				"form": null,
 				"forms": [13],
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 79,
 					"attack": 83,
@@ -196,11 +490,13 @@ export class pokemonSrc implements InMemoryDbService{
 			},
 			{
 				"id": 13,
-				"number": "9",
+				"number": 9,
 				"name": " Mega Blastoise",
 				"className": "blastoise",
 				"form": "mega",
 				"forms": null,
+				"abilities": [],
+				"availableMoves": null,
 				"stats": {
 					"hp": 79,
 					"attack": 103,

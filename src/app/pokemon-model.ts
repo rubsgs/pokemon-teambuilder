@@ -6,7 +6,7 @@ export class PokemonModel {
 	className: string;
 	form: string;
 	forms: number[];
-	moveSet: MoveModel[];
+	availableMoves: MoveModel[];
 	abilities: string[];
 	stats: {
 		hp: number,

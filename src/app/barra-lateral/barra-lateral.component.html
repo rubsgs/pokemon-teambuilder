@@ -10,9 +10,8 @@
 			<div><label>Special Defense</label> {{pokemon.stats.spDefense}}</div>
 			<div><label>Speed</label> {{pokemon.stats.speed}}</div>
 		</div>
-	</div>
-	
+	</div>	
 	<div class="container-acoes">
-		<button id="incluir-pokemon" [routerLink]="['/pokemon/details', pokemon.id]">Ver Detalhes</button>
+		<button id="incluir-pokemon" [routerLink]="['/pokemon/details', pokemon.id]" (click)="tamanhoAbertura = 0">See Details</button>
 	</div>
 </div>

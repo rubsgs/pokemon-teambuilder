@@ -38,6 +38,12 @@
 	align-self: center;
 }
 
+.container-opcoes{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 app-stat-distribution{
 	flex-shrink: 1;
 	flex-grow: 0;

@@ -11,6 +11,8 @@ import { SelecaoTimeComponent } from './selecao-time/selecao-time.component';
 import { DetalhesPokemonComponent } from './detalhes-pokemon/detalhes-pokemon.component';
 import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { FormCustomizacaoStatComponent } from './form-customizacao-stat/form-customizacao-stat.component';
+import { SelecionaMoveComponent } from './seleciona-move/seleciona-move.component';
+import { MoveItemComponent } from './move-item/move-item.component';
 
 @NgModule({
 	declarations: [
@@ -19,7 +21,9 @@ import { FormCustomizacaoStatComponent } from './form-customizacao-stat/form-cus
 		SelecaoTimeComponent,
 		DetalhesPokemonComponent,
 		BarraLateralComponent,
-		FormCustomizacaoStatComponent
+		FormCustomizacaoStatComponent,
+		SelecionaMoveComponent,
+		MoveItemComponent
 	],
 	imports: [
 		BrowserModule,

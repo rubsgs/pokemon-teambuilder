@@ -1,0 +1,77 @@
+.item-move{
+	color: #FFF;
+	float: left;
+	clear: both;
+	width: 95%;
+	border: 5px solid;
+	border-radius: 15px;
+	margin: 5px 0px;
+	padding: 0px 5px;
+	cursor: pointer;
+}
+
+.item-move h4{
+	margin: 10px 0px;
+}
+
+.item-move > div:not(.adicionar-move){
+	float: left;
+}
+
+.adicionar-move{
+	float: right;
+}
+
+.item-move[type="normal"]{
+	background-color: #bfbfa6;
+	border-color: #484839;
+}
+
+.item-move[type="normal"]:hover{
+	background-color: #9b9b81;
+}
+
+.item-move[type="grass"]{
+	background-color: #8ACA69;
+	border-color: #5F9146;
+}
+
+.item-move[type="grass"]:hover{
+	background-color: #75A85B;
+}
+
+.type-info{
+	margin: 10px 0px;
+}
+
+.category{
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	min-width: 56px;
+	min-height: 28px;
+	margin-top: 10px;
+}
+
+.category[category="physical"]{
+	background-image: url("/assets/icons/move-category/physical.png");
+}
+
+.category[category="special"]{
+	background-image: url("/assets/icons/move-category/special.png");
+}
+
+.category[category="status"]{
+	background-image: url("/assets/icons/move-category/status.png");
+}
+
+.move-stats{
+	margin: 0px 15px 5px 15px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+button.position{
+	border-radius: 100%;
+	min-width: 30px;
+	min-height: 30px;
+}

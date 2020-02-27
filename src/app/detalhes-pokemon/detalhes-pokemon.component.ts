@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../pokemon';
@@ -10,18 +11,51 @@ import { Pokemon } from '../pokemon';
 })
 export class DetalhesPokemonComponent implements OnInit {
 	pokemon: Pokemon;
-	formaEscolhida: string;
+	displayModalMove: string;
+	opacityModalMove: number;
+	displayModalPosicaoTime: string;
+	opacityModalPosicaoTime: number;
+
 	constructor(private pokemonService: PokemonService, private route: ActivatedRoute) {
 		this.pokemon = null;
+		this.displayModalMove = "none";
+		this.displayModalPosicaoTime = "none";
+		this.opacityModalMove = 0;
+		this.opacityModalPosicaoTime = 0;
 	}
 
 	ngOnInit() {
 		this.route.paramMap.subscribe(params=>{
 			this.pokemonService.getPokemon(+params.get("id")).subscribe(pokemon => {
 				this.pokemon = <Pokemon>pokemon;
-				console.log(this.pokemon);
+				if(this.pokemon.moveSet == undefined){
+					this.pokemon.moveSet = [];
+				}
 			});
 		});
-		console.log("fim nginit");
+	}
+
+	exibirMoves(){
+		this.displayModalPosicaoTime = "none";
+		this.opacityModalPosicaoTime = 0;
+		this.displayModalMove = "flex";
+
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				this.opacityModalMove = 1;
+				resolve(true);
+			}, 50);
+		});
+	}
+
+	fecharMoves(){
+		this.opacityModalMove = 0;
+
+		return new Promise((resolve,reject) => {
+			setTimeout(() => {
+				this.displayModalMove = "none";
+				resolve(true);
+			}, 200);
+		});
 	}
 }

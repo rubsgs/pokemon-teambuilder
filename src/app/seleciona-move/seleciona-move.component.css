@@ -1,0 +1,18 @@
+.container-moves > div {
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 0px;
+	border-color: #DDD;
+	display: inline-block;
+	width: calc(50% - 1px);
+	vertical-align: top;
+}
+
+.container-moves > div:first-child{
+	border-right-width: 1px;
+}
+
+.moves-disponiveis{
+	max-height: 470px;
+	overflow-y: auto;
+}

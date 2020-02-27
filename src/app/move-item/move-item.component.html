@@ -1,0 +1,23 @@
+<div class="item-move" [attr.type]="move.type">
+	<h4>{{move.name}}</h4>
+	<div [class]="'type-info ' + move.type">{{move.type.toUpperCase()}}</div>
+	<div class="move-stats">
+		Pwr.: {{move.power}}
+		<br>
+		Acc.: {{move.accuracy}}
+		<br>
+		PP: {{move.pp}}
+	</div>
+	<div class="category" [attr.category]="move.category"></div>
+	<div class="adicionar-move" *ngIf="!readOnly">
+		<ng-container *ngIf="adicionarPush else substituiMove">
+			<button class="adicionar" (click)="selecionaMove()">Add Move</button>
+		</ng-container>
+		<ng-template #substituiMove>
+			<button class="adicionar position" (click)="selecionaMove(0)">1</button>
+			<button class="adicionar position" (click)="selecionaMove(1)">2</button>
+			<button class="adicionar position" (click)="selecionaMove(2)">3</button>
+			<button class="adicionar position" (click)="selecionaMove(3)">4</button>
+		</ng-template>
+	</div>
+</div>

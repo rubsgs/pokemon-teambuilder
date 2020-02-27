@@ -33,6 +33,32 @@ body input[type="text"], button{
 	color: #333;
 }
 
+button{
+	border-radius: 5px;	
+	padding: 5px;
+	border: 1px solid #848383;
+	background-color: #FFF;
+	cursor: pointer;
+}
+
+button:hover{
+	background-color: #e6e6e6;
+}
+
+button:active,
+button:disabled{
+	background-color: #bdbdbd;
+}
+
+button:disabled{
+	cursor: default;
+}
+
+.btn-lg{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 .icon{
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -93,4 +119,81 @@ body input[type="text"], button{
 
 .container-lista-pokemon{
 	margin-top: 10%;
+}
+
+.flex-container{
+	display: flex;
+}
+
+
+.container-modal{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	justify-content: center;
+	background-color: rgba(0,0,0,0.4);
+	z-index: 2;
+	opacity: 0;
+	transition-duration: 0.2s;
+	transition-property: opacity;
+	top: 0px;
+}
+
+.container-modal > *{
+	flex-basis: 80%;
+	align-self: center;
+}
+
+.container-modal > * > div{	
+	background-color: #FFF;
+}
+
+.type-info{
+	padding: 5px;
+	font-weight: bolder;
+	font-size: 12px;
+	color: white;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	display: inline-block;
+}
+
+.type-info.normal{
+	background-color: #A8A878;
+	border-color: #6D6D4E;
+}
+
+.type-info.grass{
+	background-color: #78C850;
+	border-color: #4E8234;
+}
+
+.modal{
+	border-radius: 5px;
+	padding: 0.1px 15px;
+}
+
+.modal-title{
+	border: 0px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	border-color: #DDD;
+}
+
+.modal-opcoes{
+	border: 0px;
+	border-top-width: 1px;
+	border-style: solid;
+	border-color: #DDD;
+	text-align: right;
+}
+
+.modal-opcoes button{
+	margin: 10px;
+	min-width: 10%;
+	font-size: 24px
 }
