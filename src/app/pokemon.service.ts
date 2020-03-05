@@ -14,7 +14,7 @@ export class PokemonService {
 	pokemonEscolhido:PokemonModel;
 	constructor(private http: HttpClient) { 
 		this.pokemonEscolhido = null;
-		//this.timeAtual = [pokemonSrc[4], pokemonSrc[5], pokemonSrc[6], pokemonSrc[7], pokemonSrc[8], pokemonSrc[9]];
+		this.timeAtual = Array(6);
 	}
 
 	getPokemons():Observable<PokemonModel[]> {
@@ -36,5 +36,29 @@ export class PokemonService {
 
 	getTime(){
 		return this.timeAtual;
+	}
+
+	sortTimeAtual(){
+		let posAtual = 0;
+		for(let i = 0; i < this.timeAtual.length; i++){
+			if(this.timeAtual[posAtual] == undefined || this.timeAtual[posAtual] == null){
+				let temp = this.timeAtual[posAtual];
+				this.timeAtual.splice(posAtual,1);
+				this.timeAtual.push(temp);
+			} else {
+				posAtual++;
+			}
+		}
+	}
+
+	addTimeAtual(pokemon: Pokemon, posicao: number){
+		if(posicao >= 6){
+			posicao = 5;
+		} else if(posicao == undefined || posicao == null){
+			posicao = 0;
+		}
+
+		this.timeAtual[posicao] = pokemon;
+		this.sortTimeAtual();
 	}
 }

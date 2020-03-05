@@ -13,6 +13,7 @@ import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 import { FormCustomizacaoStatComponent } from './form-customizacao-stat/form-customizacao-stat.component';
 import { SelecionaMoveComponent } from './seleciona-move/seleciona-move.component';
 import { MoveItemComponent } from './move-item/move-item.component';
+import { SelecionaPosicaoTimeComponent } from './seleciona-posicao-time/seleciona-posicao-time.component';
 
 @NgModule({
 	declarations: [
@@ -23,7 +24,8 @@ import { MoveItemComponent } from './move-item/move-item.component';
 		BarraLateralComponent,
 		FormCustomizacaoStatComponent,
 		SelecionaMoveComponent,
-		MoveItemComponent
+		MoveItemComponent,
+		SelecionaPosicaoTimeComponent
 	],
 	imports: [
 		BrowserModule,

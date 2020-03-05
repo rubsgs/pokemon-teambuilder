@@ -1,11 +1,8 @@
 <div class="container-selecao-time">
 	<h2>Current Team:</h2>
 	<div class="selecao-time">
-		<div class="membro-time icon squirtle" posicao-time="1"></div>
-		<div class="membro-time icon wartortle" posicao-time="2"></div>
-		<div class="membro-time icon blastoise" posicao-time="3"></div>
-		<div class="membro-time icon charmander" posicao-time="4"></div>
-		<div class="membro-time icon charmeleon" posicao-time="5"></div>
-		<div class="membro-time icon charizard" form="mega-y" posicao-time="6"></div>
+		<ng-container *ngFor="let posicao of pokemonService.timeAtual; index as i">
+			<div [class]="'membro-time icon ' + (pokemonService.timeAtual[i] != undefined ? pokemonService.timeAtual[i].className : '')" [attr.form]="(pokemonService.timeAtual[i] != undefined ? pokemonService.timeAtual[i].form : '')" [attr.posicao-time]=i></div>
+		</ng-container>
 	</div>
 </div>

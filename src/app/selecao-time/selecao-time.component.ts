@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-selecao-time',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelecaoTimeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
   }
