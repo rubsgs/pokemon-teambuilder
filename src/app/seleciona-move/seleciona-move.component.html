@@ -14,7 +14,7 @@
 		<button class="btn-fechar btn-lg" (click)="fechar.emit()">
 			Close
 		</button>
-		<button class="btn-adicionar-time btn-lg" (click)="adicionar.emit()" [disabled]="pokemon.moveSet.length == 0 ? 'disabled' : ''">
+		<button class="btn-adicionar-time btn-lg" (click)="adicionarPokemon.emit()" [disabled]="pokemon.moveSet.length == 0 ? 'disabled' : ''">
 			Add Pokemon
 		</button>
 	</div>

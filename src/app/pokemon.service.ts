@@ -30,15 +30,12 @@ export class PokemonService {
 		this.pokemonEscolhido = null;
 	}
 
-	adicionaPokemonTime(pokemon: Pokemon, posicao: number):void {
-		this.timeAtual[posicao] = pokemon;
-	}
-
 	getTime(){
 		return this.timeAtual;
 	}
 
-	sortTimeAtual(){
+	//As posicoes de timeAtual que são undefined são jogadas para o final do array e retorna a quantidade de elementos que não são undefined(posAtual)
+	sortTimeAtual(): number{
 		let posAtual = 0;
 		for(let i = 0; i < this.timeAtual.length; i++){
 			if(this.timeAtual[posAtual] == undefined || this.timeAtual[posAtual] == null){
@@ -49,13 +46,21 @@ export class PokemonService {
 				posAtual++;
 			}
 		}
+
+		return posAtual;
 	}
 
-	addTimeAtual(pokemon: Pokemon, posicao: number){
+	//adiciona pokemon ao timeAtual, se posicao não for imformada o pokemon será adicionado(ou ira sobrescerver) na ultima posicao
+	addTimeAtual(pokemon: Pokemon, posicao?: number){
+		let qtdPokemon = this.sortTimeAtual();
 		if(posicao >= 6){
 			posicao = 5;
 		} else if(posicao == undefined || posicao == null){
-			posicao = 0;
+			if(qtdPokemon < 6){
+				posicao = qtdPokemon + 1;
+			} else {
+				posicao = 6;
+			}
 		}
 
 		this.timeAtual[posicao] = pokemon;

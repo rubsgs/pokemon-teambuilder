@@ -15,5 +15,8 @@
 	</div>
 </div>
 <div class="container-modal" [ngStyle]="{'display': displayModalMove, 'opacity': opacityModalMove}" *ngIf="pokemon != undefined">
-	<app-seleciona-move [pokemon]="pokemon" (fechar)="fecharMoves()"></app-seleciona-move>
+	<app-seleciona-move [pokemon]="pokemon" (fechar)="fecharMoves()" (adicionarPokemon)="fecharMoves(); adicionarPokemon()"></app-seleciona-move>
+</div>
+<div class="container-modal" [ngStyle]="{'display': displayModalPosicaoTime, 'opacity': opacityModalPosicaoTime}" *ngIf="pokemon != undefined">
+	<app-seleciona-posicao-time></app-seleciona-posicao-time>
 </div>
