@@ -7,7 +7,7 @@ import { PokemonService } from '../pokemon.service';
 	styleUrls: ['./selecao-time.component.css']
 })
 export class SelecaoTimeComponent implements OnInit {
-	
+	@Output() pokemonTimeSelecionado = new EventEmitter();
 
 	constructor(private pokemonService: PokemonService) { }
 

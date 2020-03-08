@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../pokemon';
+import { StatsModel } from '../stats-model';
 
 @Component({
 	selector: 'app-detalhes-pokemon',
@@ -31,6 +32,12 @@ export class DetalhesPokemonComponent implements OnInit {
 				if(this.pokemon.moveSet == undefined){
 					this.pokemon.moveSet = [];
 				}
+				if(this.pokemon.iv == undefined){
+					this.pokemon.iv = new StatsModel();
+				}
+				if(this.pokemon.ev == undefined){
+					this.pokemon.ev = new StatsModel()
+				}
 				console.log("ngInit");
 				console.log(this.pokemon);
 			});
@@ -41,6 +48,7 @@ export class DetalhesPokemonComponent implements OnInit {
 		this.displayModalPosicaoTime = "none";
 		this.opacityModalPosicaoTime = 0;
 		this.displayModalMove = "flex";
+		console.log(this.pokemon);
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
@@ -79,10 +87,19 @@ export class DetalhesPokemonComponent implements OnInit {
 		return new Promise((resolve, reject)=>{
 			setTimeout(() => {
 				this.opacityModalPosicaoTime = 1;
-				console.log("exibirPosicaoPokemon");
-				console.log(this.pokemon);
 				resolve(true);
 			}, 50)
+		})
+	}
+
+	fecharPosicaoPokemon(){
+		console.log(this.pokemonService.timeAtual);
+		this.opacityModalPosicaoTime = 0;
+		return new Promise((resolve, reject) => {
+			setTimeout(() =>{
+				this.displayModalPosicaoTime = "none";
+				resolve(true);
+			}, 200);
 		})
 	}
 }

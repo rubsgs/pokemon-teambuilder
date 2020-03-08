@@ -2,7 +2,7 @@
 	<h2>Current Team:</h2>
 	<div class="selecao-time">
 		<ng-container *ngFor="let posicao of pokemonService.timeAtual; index as i">
-			<div [class]="'membro-time icon ' + (pokemonService.timeAtual[i] != undefined ? pokemonService.timeAtual[i].className : '')" [attr.form]="(pokemonService.timeAtual[i] != undefined ? pokemonService.timeAtual[i].form : '')" [attr.posicao-time]=i></div>
+			<div [class]="'membro-time icon ' + (pokemonService.timeAtual[i] != undefined ? pokemonService.timeAtual[i].className : '')" [attr.form]="(pokemonService.timeAtual[i] != undefined ? pokemonService.timeAtual[i].form : '')" [attr.posicao-time]=i (click)="pokemonTimeSelecionado.emit({posicaoTime:i, pokemon:pokemonService.timeAtual[i]});"></div>
 		</ng-container>
 	</div>
 </div>
