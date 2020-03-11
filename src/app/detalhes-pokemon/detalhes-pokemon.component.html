@@ -7,8 +7,8 @@
 			<h2>{{pokemon.name}}</h2>
 		</div>
 		<app-form-customizacao-stat [titulo]="'Base Stats'" [classeContainer]="'container-base'" [classeInput]="'input-base'" [disabled]="true" [statsModel]="pokemon.stats"></app-form-customizacao-stat>
-		<app-form-customizacao-stat [titulo]="'Effort Values'" [classeContainer]="'customizar-ev'" [classeInput]="'input-ev'" [statsModel]="pokemon.ev"></app-form-customizacao-stat>
-		<app-form-customizacao-stat [titulo]="'Invidual Values'" [classeContainer]="'customizar-iv'" [classeInput]="'input-iv'" [statsModel]="pokemon.iv"></app-form-customizacao-stat>
+		<app-form-customizacao-stat [titulo]="'Effort Values'" (statsChanged)="validaEv($event)" [classeContainer]="'customizar-ev'" [classeInput]="'input-ev'" [statsModel]="pokemon.ev"></app-form-customizacao-stat>
+		<app-form-customizacao-stat [titulo]="'Invidual Values'" (statsChanged)="validaIv($event)" [classeContainer]="'customizar-iv'" [classeInput]="'input-iv'" [statsModel]="pokemon.iv"></app-form-customizacao-stat>
 		<div class="container-opcoes">
 			<button class="btn-selecionar-movimentos btn-lg" (click)="exibirMoves()">Change Moves</button>
 		</div>

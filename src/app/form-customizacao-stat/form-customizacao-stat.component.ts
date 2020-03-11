@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { StatsModel } from '../stats-model';
 
@@ -13,6 +13,7 @@ export class FormCustomizacaoStatComponent implements OnInit {
 	@Input() classeInput: string;
 	@Input() disabled: boolean;
 	@Input() statsModel: StatsModel;
+	@Output() statsChanged = new EventEmitter();
 	formStats;
 	
 	constructor(private formBuilder: FormBuilder) {
@@ -31,6 +32,11 @@ export class FormCustomizacaoStatComponent implements OnInit {
 			spDefense: this.statsModel != undefined ? this.statsModel.spDefense : 0,
 			speed: this.statsModel != undefined ? this.statsModel.speed : 0
 		});
+	}
+
+	getStats(){
+		this.statsModel = <StatsModel>this.formStats.value;
+		this.statsChanged.emit(this.statsModel);
 	}
 
 }

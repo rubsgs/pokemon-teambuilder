@@ -38,17 +38,22 @@ export class DetalhesPokemonComponent implements OnInit {
 				if(this.pokemon.ev == undefined){
 					this.pokemon.ev = new StatsModel()
 				}
-				console.log("ngInit");
-				console.log(this.pokemon);
 			});
 		});
 	}
 
 	exibirMoves(){
+		if(!this.validaEv(this.pokemon.ev)){
+			return;
+		}
+
+		if(!this.validaIv(this.pokemon.iv)){
+			return;
+		}
+
 		this.displayModalPosicaoTime = "none";
 		this.opacityModalPosicaoTime = 0;
 		this.displayModalMove = "flex";
-		console.log(this.pokemon);
 
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
@@ -78,6 +83,8 @@ export class DetalhesPokemonComponent implements OnInit {
 		} else {
 			this.exibirPosicaoPokemon();
 		}
+
+		console.log(this.pokemon);
 	}
 
 	exibirPosicaoPokemon(){
@@ -101,5 +108,72 @@ export class DetalhesPokemonComponent implements OnInit {
 				resolve(true);
 			}, 200);
 		})
+	}
+
+	validaEv($event): boolean{
+		let totalEvs = 0;
+		let {hp,attack,defense,spAttack,spDefense,speed} = $event;
+		
+		let hpValido = hp <= 252;
+		totalEvs += hp;
+
+		let attValido = attack <= 252;
+		totalEvs += attack;
+
+		let defValido = defense <= 252;
+		totalEvs += defense;
+
+		let spAttValido = spAttack <= 252;
+		totalEvs += spAttack;
+
+		let spDefValido = spDefense <= 252;
+		totalEvs += spDefense;
+
+		let spdValido = speed <= 252;
+		totalEvs += speed;
+
+		if(totalEvs > 510){
+			window.alert("The sum of all EVs must be lower than 510.");
+			return false;
+		} else {
+			if(hpValido && attValido && defValido && spAttValido && spDefValido && spdValido){
+				this.pokemon.ev = <StatsModel>$event;
+				return true;
+			} else {
+				window.alert("You can't have an EV higher than 252.");
+				return false;
+			}
+		}
+	}
+
+	validaIv($event){
+		let totalEvs = 0;
+		let {hp,attack,defense,spAttack,spDefense,speed} = $event;
+		
+		let hpValido = hp <= 31 && hp >= 0;
+		totalEvs += hp;
+
+		let attValido = attack <= 31 && attack >= 0;
+		totalEvs += attack;
+
+		let defValido = defense <= 31 && defense >= 0;
+		totalEvs += defense;
+
+		let spAttValido = spAttack <= 31 && spAttack >= 0;
+		totalEvs += spAttack;
+
+		let spDefValido = spDefense <= 31 && spDefense >= 0;
+		totalEvs += spDefense;
+
+		let spdValido = speed <= 31 && speed >= 0;
+		totalEvs += speed;
+
+		if(hpValido && attValido && defValido && spAttValido && spDefValido && spdValido){
+			this.pokemon.iv = <StatsModel>$event;
+			return true;
+		} else {
+			window.alert("IVs must be between 0 and 31");
+			return false;
+		}
 	}
 }
