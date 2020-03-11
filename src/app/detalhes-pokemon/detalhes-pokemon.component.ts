@@ -16,6 +16,8 @@ export class DetalhesPokemonComponent implements OnInit {
 	opacityModalMove: number;
 	displayModalPosicaoTime: string;
 	opacityModalPosicaoTime: number;
+	editandoTime: boolean;
+	posicaoTime: number;
 
 	constructor(public pokemonService: PokemonService, private route: ActivatedRoute, private router: Router) {
 		this.pokemon = null;
@@ -29,6 +31,7 @@ export class DetalhesPokemonComponent implements OnInit {
 		this.route.paramMap.subscribe(params=>{
 			let posicao = params.get("position");
 			let idPokemon = params.get("id");
+			this.editandoTime = false;
 			if(posicao != null && posicao != undefined){
 				let pokemonTime = this.pokemonService.getPokemonPosicao(+posicao);
 
@@ -39,6 +42,8 @@ export class DetalhesPokemonComponent implements OnInit {
 				}
 
 				this.pokemon = pokemonTime;
+				this.posicaoTime = +posicao;
+				this.editandoTime = true;
 			} else {
 				this.pokemonService.getPokemon(+idPokemon).subscribe(pokemon => {
 					this.pokemon = <Pokemon>pokemon;
@@ -92,8 +97,14 @@ export class DetalhesPokemonComponent implements OnInit {
 	adicionarPokemon(){
 		let qtdPokemon = this.pokemonService.sortTimeAtual();
 		if(qtdPokemon < 6){
-			this.pokemonService.addTimeAtual(this.pokemon);
-			window.alert(this.pokemon.name + " was added to your team!");
+			if(this.editandoTime){
+				this.pokemonService.addTimeAtual(this.pokemon, this.posicaoTime);
+				window.alert(this.pokemon.name + " was changed!");
+			} else {
+				this.pokemonService.addTimeAtual(this.pokemon);
+				window.alert(this.pokemon.name + " was added to your team!");
+			}
+			
 			this.router.navigate(["/"]);
 		} else {
 			this.exibirPosicaoPokemon();
