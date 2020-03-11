@@ -1,19 +1,10 @@
 {
-  "hosting": [
-    {
-      "target": "pokemon-teambuilder",
-      "public": "dist/pokemon-teambuilder",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    }
-  ]
+  "hosting": {
+    "public": "dist/pokemon-teambuilder",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
 }

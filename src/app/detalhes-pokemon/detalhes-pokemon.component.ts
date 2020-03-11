@@ -17,7 +17,7 @@ export class DetalhesPokemonComponent implements OnInit {
 	displayModalPosicaoTime: string;
 	opacityModalPosicaoTime: number;
 
-	constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private router: Router) {
+	constructor(public pokemonService: PokemonService, private route: ActivatedRoute, private router: Router) {
 		this.pokemon = null;
 		this.displayModalMove = "none";
 		this.displayModalPosicaoTime = "none";

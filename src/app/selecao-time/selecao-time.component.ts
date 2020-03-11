@@ -9,7 +9,7 @@ import { PokemonService } from '../pokemon.service';
 export class SelecaoTimeComponent implements OnInit {
 	@Output() pokemonTimeSelecionado = new EventEmitter();
 
-	constructor(private pokemonService: PokemonService) { }
+	constructor(public pokemonService: PokemonService) { }
 
 	ngOnInit() {
 	}

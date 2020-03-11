@@ -17,7 +17,7 @@ export class MoveItemComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	selecionaMove(posicao){
+	selecionaMove(posicao?){
 		this.moveSelecionado.emit({"move": this.move, "posicao": posicao});
 	}
 }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
 	title = 'Pokémon TeamBuilder v0.1';
 
-	constructor(private pokemonService: PokemonService, private router: Router){}
+	constructor(public pokemonService: PokemonService, private router: Router){}
 
 	redirecionaPokemon($event){
 		this.router.navigate(["/team/details/"+$event.posicaoTime]);
