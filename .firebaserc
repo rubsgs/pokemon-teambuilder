@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pokemon-teambuilder-f2371": {
+      "hosting": {
+        "pokemon-teambuilder": [
+          "pokemon-teambuilder-f2371"
+        ]
+      }
+    }
+  }
+}
