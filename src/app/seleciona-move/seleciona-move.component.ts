@@ -16,14 +16,6 @@ export class SelecionaMoveComponent implements OnInit {
 	}
 
 	ngOnChanges(){
-		if(this.pokemon != null){
-			console.log("Escolheu pokemon");
-			console.log(this.pokemon);
-			console.log(typeof this.pokemon);
-		} else {
-			console.log("Sem pokemon");
-			console.log(typeof this.pokemon);
-		}
 	}
 
 	adicionarMove(evento){

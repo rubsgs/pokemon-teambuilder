@@ -21,7 +21,7 @@ export class ListaPokemonComponent implements OnInit {
 	}
 
 	getPokemons(): void{
-		this.pokemonService.getPokemons().subscribe(pokemons => {this.pokemons = <PokemonModel[]>pokemons;console.log(pokemons)});
+		this.pokemonService.getPokemons().subscribe(pokemons => {this.pokemons = <PokemonModel[]>pokemons;});
 	}
 
 	escolhePokemon(evento: any,pokemon: PokemonModel){

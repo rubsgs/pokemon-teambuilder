@@ -27,18 +27,33 @@ export class DetalhesPokemonComponent implements OnInit {
 
 	ngOnInit() {
 		this.route.paramMap.subscribe(params=>{
-			this.pokemonService.getPokemon(+params.get("id")).subscribe(pokemon => {
-				this.pokemon = <Pokemon>pokemon;
-				if(this.pokemon.moveSet == undefined){
-					this.pokemon.moveSet = [];
+			let posicao = params.get("position");
+			let idPokemon = params.get("id");
+			if(posicao != null && posicao != undefined){
+				let pokemonTime = this.pokemonService.getPokemonPosicao(+posicao);
+
+				if(pokemonTime == null){
+					window.alert("Invalid Pokemon!");
+					this.router.navigate(["/"]);
+					return;
 				}
-				if(this.pokemon.iv == undefined){
-					this.pokemon.iv = new StatsModel();
-				}
-				if(this.pokemon.ev == undefined){
-					this.pokemon.ev = new StatsModel()
-				}
-			});
+
+				this.pokemon = pokemonTime;
+			} else {
+				this.pokemonService.getPokemon(+idPokemon).subscribe(pokemon => {
+					this.pokemon = <Pokemon>pokemon;
+					if(this.pokemon.moveSet == undefined){
+						this.pokemon.moveSet = [];
+					}
+					if(this.pokemon.iv == undefined){
+						this.pokemon.iv = new StatsModel();
+					}
+					if(this.pokemon.ev == undefined){
+						this.pokemon.ev = new StatsModel()
+					}
+				});
+			}
+			
 		});
 	}
 
@@ -83,8 +98,6 @@ export class DetalhesPokemonComponent implements OnInit {
 		} else {
 			this.exibirPosicaoPokemon();
 		}
-
-		console.log(this.pokemon);
 	}
 
 	exibirPosicaoPokemon(){
@@ -100,7 +113,6 @@ export class DetalhesPokemonComponent implements OnInit {
 	}
 
 	fecharPosicaoPokemon(){
-		console.log(this.pokemonService.timeAtual);
 		this.opacityModalPosicaoTime = 0;
 		return new Promise((resolve, reject) => {
 			setTimeout(() =>{

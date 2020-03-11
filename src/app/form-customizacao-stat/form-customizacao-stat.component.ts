@@ -20,7 +20,6 @@ export class FormCustomizacaoStatComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		console.log(this.statsModel);
 	}
 
 	ngOnChanges(){

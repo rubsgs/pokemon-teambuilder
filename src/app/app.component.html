@@ -1,7 +1,7 @@
 <div class="container-app">
   <h1>{{title}}</h1>
   <router-outlet></router-outlet>
-  <app-selecao-time (click)="pokemonService.limpaPokemonEscolhido()"></app-selecao-time>
+  <app-selecao-time (pokemonTimeSelecionado)="redirecionaPokemon($event)" (click)="pokemonService.limpaPokemonEscolhido()"></app-selecao-time>
   <app-lista-pokemon (click)="pokemonService.limpaPokemonEscolhido()"></app-lista-pokemon>
   <app-barra-lateral [pokemon]="pokemonService.pokemonEscolhido" ></app-barra-lateral>
 </div>
